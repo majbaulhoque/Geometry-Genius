@@ -44,8 +44,10 @@ function calculateParallelogramArea(){
     const area = base * height;
     console.log(area);
 
-    const parallelogramArea = document.getElementById('parallelogram-area');
-    parallelogramArea.innerText = area;
+    setInnerText('parallelogram-area',area);
+
+    // const parallelogramArea = document.getElementById('parallelogram-area');
+    // parallelogramArea.innerText = area;
 
 }
 
@@ -56,4 +58,11 @@ function getInputValue(fieldId){
     const inputValueText = inputField.value;
     const value = parseFloat(inputValueText);
     return value
+}
+
+// * Reuseable set span, p, div, etc text
+
+function setInnerText(spanId, area){
+    const element = document.getElementById(spanId);
+    element.innerText = area;
 }
