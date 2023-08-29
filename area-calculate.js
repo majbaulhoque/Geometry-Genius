@@ -61,6 +61,21 @@ function calculateEllipseArea(){
     setInnerText('ellipse-area',area);
 }
 
+// Rhombus-part
+
+function calculateRhombusArea(){
+    const diagonalOne = getInputValue('diagonal-one');
+    const diagonalTwo = getInputValue('diagonal-two');
+
+    const area = 0.5 * diagonalOne * diagonalTwo;
+    setInnerText('rhombus-area', area);
+
+    // validate input
+    if(isNaN(diagonalOne)|| isNaN(diagonalTwo)){
+        alert("Please input a number!");
+    }
+}
+
 // ? Reuseable get input value field in number.
 
 function getInputValue(fieldId){
