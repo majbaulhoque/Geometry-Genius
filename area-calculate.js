@@ -49,6 +49,9 @@ function calculateParallelogramArea(){
     // const parallelogramArea = document.getElementById('parallelogram-area');
     // parallelogramArea.innerText = area;
 
+    // ! Add to calculation entry
+
+    addToCalculationEntry('parallelogram',area);
 }
 
 // ellipse-part
@@ -76,6 +79,7 @@ function calculateRhombusArea(){
     }
 }
 
+
 // ? Reuseable get input value field in number.
 
 function getInputValue(fieldId){
@@ -90,4 +94,15 @@ function getInputValue(fieldId){
 function setInnerText(spanId, area){
     const element = document.getElementById(spanId);
     element.innerText = area;
+}
+
+// Add to calculation entry
+
+function addToCalculationEntry(areaType, area){
+    console.log(areaType + ' ' + area);
+    const calculationEntry = document.getElementById('calculation-entry');
+
+    const p = document.createElement('p');
+    p.innerHTML =`${areaType} ${area} cm<sup>2</sup> <button class="btn btn-sm btn-success">Convert</button>`;
+    calculationEntry.appendChild(p);
 }
